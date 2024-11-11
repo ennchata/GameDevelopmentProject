@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace GameDevelopmentProject.Components.Drawables {
     public abstract class BaseDrawable<T> : IBaseDrawable {
         public string AssetReference;
-        public Vector2 Position;
+        public Vector2 Position = Vector2.Zero;
         public Color Color = Color.White;
         public float Scale = 1f;
 

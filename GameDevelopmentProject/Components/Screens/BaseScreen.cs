@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.Components.Screens {
     public abstract class BaseScreen : IBaseDrawable {
-        public List<IBaseDrawable> drawables;
+        public List<IBaseDrawable> drawables = new List<IBaseDrawable>();
 
         private Game game;
 
