@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.Components.Drawables {
-    public class BaseDrawable<T> : DrawableGameComponent {
+    public abstract class BaseDrawable<T> : DrawableGameComponent {
         public string AssetReference;
         public Vector2 Position;
         public Color Color = Color.White;
