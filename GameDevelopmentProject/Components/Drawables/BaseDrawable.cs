@@ -6,14 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameDevelopmentProject.Components.Drawables.Base {
+namespace GameDevelopmentProject.Components.Drawables {
     public class BaseDrawable<T> : DrawableGameComponent {
         public string AssetReference;
         public Vector2 Position;
         public Color Color = Color.White;
         public float Scale = 1f;
 
-        protected T Asset;
+        protected T asset;
         protected Game game;
 
         public BaseDrawable(Game game) : base(game) {
@@ -21,7 +21,7 @@ namespace GameDevelopmentProject.Components.Drawables.Base {
         }
 
         public new void LoadContent() {
-            Asset = game.Content.Load<T>(AssetReference);
+            asset = game.Content.Load<T>(AssetReference);
         }
 
         public new void UnloadContent() {

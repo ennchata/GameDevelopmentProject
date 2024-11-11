@@ -1,4 +1,4 @@
-﻿using GameDevelopmentProject.Components.Drawables.Base;
+﻿using GameDevelopmentProject.Components.Drawables;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -12,7 +12,7 @@ namespace GameDevelopmentProject.Components.UI {
         public ImageDrawable(Game game) : base(game) { }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch) {
-            spriteBatch.Draw(Asset, Position, null, Color.White, 0f, Vector2.Zero, Scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(asset, Position, null, Color.White, 0f, Vector2.Zero, Scale, SpriteEffects.None, 0f);
         }
     }
 }

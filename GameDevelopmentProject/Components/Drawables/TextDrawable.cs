@@ -1,4 +1,4 @@
-﻿using GameDevelopmentProject.Components.Drawables.Base;
+﻿using GameDevelopmentProject.Components.Drawables;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -16,11 +16,11 @@ namespace GameDevelopmentProject.Components.UI {
 
         public override void Initialize() {
             base.Initialize();
-            Size = Asset.MeasureString(Text);
+            Size = asset.MeasureString(Text);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch) {
-            spriteBatch.DrawString(Asset, Text, Position, Color, 0f, Vector2.Zero, Scale, SpriteEffects.None, 0f);
+            spriteBatch.DrawString(asset, Text, Position, Color, 0f, Vector2.Zero, Scale, SpriteEffects.None, 0f);
         }
     }
 }
