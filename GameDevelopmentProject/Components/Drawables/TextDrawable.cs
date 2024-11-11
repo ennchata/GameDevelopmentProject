@@ -15,7 +15,6 @@ namespace GameDevelopmentProject.Components.UI {
         public TextDrawable(Game game) : base(game) { }
 
         public override void Initialize() {
-            base.Initialize();
             Size = asset.MeasureString(Text);
         }
 
