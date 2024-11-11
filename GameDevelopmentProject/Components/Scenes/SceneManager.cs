@@ -16,7 +16,8 @@ namespace GameDevelopmentProject.Components.Scenes {
 
         private SceneManager(Game game) {
             this.game = game;
-            activeScene = new App.MainMenu.Scene(game);
+            scenes.Add("MainMenu", new App.MainMenu.Scene(game));
+            activeScene = scenes["MainMenu"];
         }
 
         public static SceneManager GetInstance(Game game) {
