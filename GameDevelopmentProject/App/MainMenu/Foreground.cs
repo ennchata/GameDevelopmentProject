@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace GameDevelopmentProject.App.MainMenu {
     public class Foreground : BaseScreen {
         public Foreground(Game game) : base(game) {
-            gameObjects.Add(new ImageDrawable(game) {
+            Add(new ImageDrawable(game) {
                 AssetReference = "Images/templogo",
             });
         }

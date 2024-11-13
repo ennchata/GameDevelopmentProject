@@ -36,5 +36,13 @@ namespace GameDevelopmentProject.Components {
         public virtual void Update(GameTime gameTime) {
             foreach (T gameObject in gameObjects) gameObject.Update(gameTime);
         }
+
+        public void Add(T gameObject) {
+            gameObjects.Add(gameObject);
+        }
+
+        public void Remove(T gameObject) {
+            gameObjects.Remove(gameObject);
+        }
     }
 }
