@@ -13,6 +13,15 @@ namespace GameDevelopmentProject.App.MainMenu {
             Add(new ImageDrawable(game) {
                 AssetReference = "Images/templogo",
             });
+
+            Add(new Button(game) {
+                Position = new Vector2(100),
+                Size = new Vector2(250, 76),
+                Text = "Button",
+                AssetReference = "Fonts/Default",
+                Color = Color.Aquamarine
+            });
+
         }
     }
 }

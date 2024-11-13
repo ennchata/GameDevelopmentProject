@@ -10,12 +10,13 @@ using System.Threading.Tasks;
 namespace GameDevelopmentProject.Components.UI {
     public class TextDrawable : BaseDrawable<SpriteFont> {
         public string Text;
-        public Vector2 Size;
+        public Vector2 TextSize = Vector2.Zero;
 
         public TextDrawable(Game game) : base(game) { }
 
-        public override void Initialize() {
-            Size = asset.MeasureString(Text);
+        public override void LoadContent() {
+            base.LoadContent();
+            TextSize = asset.MeasureString(Text);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch) {
