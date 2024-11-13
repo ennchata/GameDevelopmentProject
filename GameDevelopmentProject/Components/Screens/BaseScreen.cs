@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.Components.Screens {
-    public abstract class BaseScreen : ObjectCollection<IBaseObject> {
+    public abstract class BaseScreen : ObjectCollection<IBaseObject>, IBaseScreen {
         public BaseScreen(Game game) : base(game) { }
     }
 }
