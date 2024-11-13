@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace GameDevelopmentProject.App.MainMenu {
     public class Scene : BaseScene {
         public Scene(Game game) : base(game) {
-            drawables.Add(new Foreground(game));
+            gameObjects.Add(new Foreground(game));
         }
     }
 }

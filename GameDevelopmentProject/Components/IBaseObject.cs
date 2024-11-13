@@ -7,10 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.Components {
-    public interface IBaseDrawable {
+    public interface IBaseObject {
         public void Initialize();
         public void LoadContent();
         public void UnloadContent();
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch);
+        public void Update(GameTime gameTime);
     }
 }

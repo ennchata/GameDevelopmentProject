@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.Components.Screens {
-    public abstract class BaseScreen : IBaseDrawable {
-        public List<IBaseDrawable> drawables = new List<IBaseDrawable>();
+    public abstract class BaseScreen : IBaseObject {
+        public List<IBaseObject> gameObjects = new List<IBaseObject>();
 
         private Game game;
 
@@ -18,19 +18,23 @@ namespace GameDevelopmentProject.Components.Screens {
         }
 
         public virtual void Initialize() {
-            foreach (IBaseDrawable drawable in drawables) drawable.Initialize();
+            foreach (IBaseObject gameObject in gameObjects) gameObject.Initialize();
         }
 
         public virtual void LoadContent() {
-            foreach (IBaseDrawable drawable in drawables) drawable.LoadContent();
+            foreach (IBaseObject gameObject in gameObjects) gameObject.LoadContent();
         }
 
         public virtual void UnloadContent() {
-            foreach (IBaseDrawable drawable in drawables) drawable.UnloadContent();
+            foreach (IBaseObject gameObject in gameObjects) gameObject.UnloadContent();
         }
 
         public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch) {
-            foreach (IBaseDrawable drawable in drawables) drawable.Draw(gameTime, spriteBatch);
+            foreach (IBaseObject gameObject in gameObjects) gameObject.Draw(gameTime, spriteBatch);
+        }
+
+        public virtual void Update(GameTime gameTime) {
+            foreach (IBaseObject gameObject in gameObjects) gameObject.Update(gameTime);
         }
     }
 }

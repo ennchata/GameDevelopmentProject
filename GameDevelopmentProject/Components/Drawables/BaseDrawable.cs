@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.Components.Drawables {
-    public abstract class BaseDrawable<T> : IBaseDrawable {
+    public abstract class BaseDrawable<T> : IBaseObject {
         public string AssetReference;
         public Vector2 Position = Vector2.Zero;
         public Color Color = Color.White;
@@ -31,5 +31,7 @@ namespace GameDevelopmentProject.Components.Drawables {
         }
 
         public abstract void Draw(GameTime gameTime, SpriteBatch spriteBatch);
+
+        public virtual void Update(GameTime gameTime) { }
     }
 }
