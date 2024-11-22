@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,13 @@ using System.Threading.Tasks;
 namespace GameDevelopmentProject.Components.UI {
     public class Button : TextDrawable {
         private Texture2D background;
+        private MouseState currentState, previousState;
+
+        public bool Hovering = false;
+        public event EventHandler Click;
 
         public Button(Game game) : base(game) { }
 
-        public event EventHandler Click;
 
         public override void LoadContent() {
             base.LoadContent();
@@ -26,12 +30,17 @@ namespace GameDevelopmentProject.Components.UI {
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch) {
-            spriteBatch.Draw(background, Area, Color.White);
+            spriteBatch.Draw(background, Area, Hovering ? Color.Gray : Color.White);
             spriteBatch.DrawString(asset, Text, Area.Center.ToVector2() - TextSize / 2, Color);
         }
 
         public override void Update(GameTime gameTime) {
-            
+            previousState = currentState;
+            currentState = Mouse.GetState();
+            Rectangle mouseRectangle = new Rectangle(currentState.X, currentState.Y, 1, 1);
+
+            Hovering = Area.Intersects(mouseRectangle);
+            if (Hovering && currentState.LeftButton == ButtonState.Released && previousState.LeftButton == ButtonState.Pressed) Click.Invoke(this, new EventArgs());
         }
     }
 }
