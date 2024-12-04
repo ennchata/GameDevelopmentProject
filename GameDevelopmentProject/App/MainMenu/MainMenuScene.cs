@@ -7,8 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.App.MainMenu {
-    public class Scene : BaseScene {
-        public Scene(Game game) : base(game) {
+    public class MainMenuScene : BaseScene {
+        public MainMenuScene(Game game) : base(game) {
             Add(new Foreground(game));
         }
     }

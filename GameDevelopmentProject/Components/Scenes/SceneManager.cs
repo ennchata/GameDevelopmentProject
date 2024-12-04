@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using GameDevelopmentProject.App.MainMenu;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace GameDevelopmentProject.Components.Scenes {
 
         private SceneManager(Game game) {
             this.game = game;
-            SetActive("MainMenu", new App.MainMenu.Scene(game));
+            SetActive("MainMenu", new MainMenuScene(game));
         }
 
         public static SceneManager GetInstance(Game game) {
