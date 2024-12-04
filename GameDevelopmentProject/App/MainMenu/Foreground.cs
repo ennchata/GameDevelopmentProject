@@ -35,7 +35,9 @@ namespace GameDevelopmentProject.App.MainMenu {
                 Color = Color.Black,
                 GlobalAnchor = Anchor.CENTER,
                 LocalAnchor = Anchor.CENTER,
-                Command = new DebugCommand(game, "Main menu button")
+                Commands = new IButtonCommand[] {
+                    new DebugCommand(game, "Main menu button")
+                }
             });
         }
     }

@@ -14,7 +14,7 @@ namespace GameDevelopmentProject.Components.UI {
         private MouseState currentState, previousState;
 
         public bool Hovering = false;
-        public IButtonCommand Command;
+        public IButtonCommand[] Commands;
         public Vector2 ButtonSize;
         public new Vector2 Position {
             get {
@@ -57,7 +57,9 @@ namespace GameDevelopmentProject.Components.UI {
             Rectangle mouseRectangle = new Rectangle(currentState.X, currentState.Y, 1, 1);
 
             Hovering = Area.Intersects(mouseRectangle);
-            if (Hovering && currentState.LeftButton == ButtonState.Released && previousState.LeftButton == ButtonState.Pressed) Command.Invoke(gameTime);
+            if (Hovering && currentState.LeftButton == ButtonState.Released && previousState.LeftButton == ButtonState.Pressed) {
+                foreach (IButtonCommand command in Commands) command.Invoke(gameTime);
+            }
         }
     }
 }
