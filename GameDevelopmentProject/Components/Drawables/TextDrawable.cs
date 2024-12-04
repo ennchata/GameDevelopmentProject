@@ -1,5 +1,4 @@
-﻿using GameDevelopmentProject.Components.Drawables;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -7,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameDevelopmentProject.Components.UI {
+namespace GameDevelopmentProject.Components.Drawables {
     public class TextDrawable : BaseDrawable<SpriteFont> {
         public string Text;
         public Vector2 TextSize = Vector2.Zero;

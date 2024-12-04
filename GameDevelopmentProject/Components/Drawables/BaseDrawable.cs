@@ -10,7 +10,7 @@ namespace GameDevelopmentProject.Components.Drawables {
     public abstract class BaseDrawable<T> : IBaseObject {
         public string AssetReference;
         public Vector2 Position {
-            get { return position + GetGlobalOffset() - GetLocalOffset(); }
+            get { return position + GetGlobalOffset() + GetLocalOffset(); }
             set {
                 position = value;
             }
@@ -91,7 +91,7 @@ namespace GameDevelopmentProject.Components.Drawables {
                     break;
             }
 
-            return new Vector2(x, y);
+            return new Vector2(-x, -y);
         }
     }
 }
