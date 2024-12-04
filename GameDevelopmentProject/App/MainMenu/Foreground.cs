@@ -19,21 +19,15 @@ namespace GameDevelopmentProject.App.MainMenu {
                 Position = new Vector2(0, 10)
             });
 
-            Button button = new Button(game) {
+            Add(new Button(game) {
                 Size = new Vector2(250, 76),
                 Text = "Button",
                 AssetReference = "Fonts/Default",
-                Color = Color.Aquamarine,
+                Color = Color.Black,
                 GlobalAnchor = Anchor.CENTER,
-                LocalAnchor = Anchor.CENTER
-            };
-
-            button.Click += (object sender, EventArgs eventArgs) => {
-                Debug.WriteLine("click");
-            };
-
-            Add(button);
-
+                LocalAnchor = Anchor.CENTER,
+                Command = new DebugCommand(game, "Main menu button")
+            });
         }
     }
 }
