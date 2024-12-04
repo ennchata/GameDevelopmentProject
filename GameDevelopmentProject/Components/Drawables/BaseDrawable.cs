@@ -10,7 +10,10 @@ namespace GameDevelopmentProject.Components.Drawables {
     public abstract class BaseDrawable<T> : IBaseObject {
         public string AssetReference;
         public Vector2 Position {
-            get { return position + GetGlobalOffset() + GetLocalOffset(); }
+            get { 
+                return position 
+                    + GetOffset(GlobalAnchor, game.GraphicsDevice.Viewport.Width, game.GraphicsDevice.Viewport.Height) 
+                    + GetOffset(LocalAnchor, -Size.X, -Size.Y); }
             set {
                 position = value;
             }
@@ -46,52 +49,28 @@ namespace GameDevelopmentProject.Components.Drawables {
 
         public virtual void Update(GameTime gameTime) { }
 
-        private Vector2 GetGlobalOffset() {
+        protected Vector2 GetOffset(Anchor anchor, float width, float height) {
             float x = 0;
             float y = 0;
 
-            switch (GlobalAnchor) {
+            switch (anchor) {
                 case Anchor.TOP_CENTER: case Anchor.CENTER: case Anchor.BOTTOM_CENTER:
-                    x = game.GraphicsDevice.Viewport.Width / 2f;
+                    x = width / 2f;
                     break;
                 case Anchor.TOP_RIGHT: case Anchor.CENTER_RIGHT: case Anchor.BOTTOM_RIGHT:
-                    x = game.GraphicsDevice.Viewport.Width;
+                    x = width;
                     break;
             }
-            switch (GlobalAnchor) {
+            switch (anchor) {
                 case Anchor.CENTER_LEFT: case Anchor.CENTER: case Anchor.CENTER_RIGHT:
-                    y = game.GraphicsDevice.Viewport.Height / 2f;
+                    y = height / 2f;
                     break;
                 case Anchor.BOTTOM_LEFT: case Anchor.BOTTOM_CENTER: case Anchor.BOTTOM_RIGHT:
-                    y = game.GraphicsDevice.Viewport.Height;
+                    y = height;
                     break;
             }
 
             return new Vector2(x, y);
-        }
-
-        private Vector2 GetLocalOffset() {
-            float x = 0;
-            float y = 0;
-
-            switch (LocalAnchor) {
-                case Anchor.TOP_CENTER: case Anchor.CENTER: case Anchor.BOTTOM_CENTER:
-                    x = Size.X / 2f;
-                    break;
-                case Anchor.TOP_RIGHT: case Anchor.CENTER_RIGHT: case Anchor.BOTTOM_RIGHT:
-                    x = Size.X;
-                    break;
-            }
-            switch (LocalAnchor) {
-                case Anchor.CENTER_LEFT: case Anchor.CENTER: case Anchor.CENTER_RIGHT:
-                    y = Size.Y / 2f;
-                    break;
-                case Anchor.BOTTOM_LEFT: case Anchor.BOTTOM_CENTER: case Anchor.BOTTOM_RIGHT:
-                    y = Size.Y;
-                    break;
-            }
-
-            return new Vector2(-x, -y);
         }
     }
 }

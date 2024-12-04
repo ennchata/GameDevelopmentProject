@@ -15,6 +15,22 @@ namespace GameDevelopmentProject.Components.UI {
 
         public bool Hovering = false;
         public IButtonCommand Command;
+        public Vector2 ButtonSize;
+        public new Vector2 Position {
+            get {
+                return position
+                    + GetOffset(GlobalAnchor, game.GraphicsDevice.Viewport.Width, game.GraphicsDevice.Viewport.Height)
+                    + GetOffset(LocalAnchor, -ButtonSize.X, -ButtonSize.Y);
+            }
+            set {
+                position = value;
+            }
+        }
+        public new Rectangle Area {
+            get {
+                return new Rectangle((int)Position.X, (int)Position.Y, (int)ButtonSize.X, (int)ButtonSize.Y);
+            }
+        }
 
         public Button(Game game) : base(game) { }
 
@@ -32,7 +48,7 @@ namespace GameDevelopmentProject.Components.UI {
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch) {
             spriteBatch.Draw(background, Area, Hovering ? Color.Gray : Color.White);
-            spriteBatch.DrawString(asset, Text, Area.Center.ToVector2() - TextSize / 2, Color);
+            spriteBatch.DrawString(asset, Text, Area.Center.ToVector2() - Size / 2, Color);
         }
 
         public override void Update(GameTime gameTime) {

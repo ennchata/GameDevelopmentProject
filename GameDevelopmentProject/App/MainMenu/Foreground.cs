@@ -19,8 +19,17 @@ namespace GameDevelopmentProject.App.MainMenu {
                 Position = new Vector2(0, 10)
             });
 
+            Add(new TextDrawable(game) {
+                Text = "game made by Thibo Maes",
+                AssetReference = "Fonts/Default",
+                Color = Color.White,
+                GlobalAnchor = Anchor.TOP_CENTER,
+                LocalAnchor = Anchor.TOP_CENTER,
+                Position = new Vector2(0, 250)
+            });
+
             Add(new Button(game) {
-                Size = new Vector2(250, 76),
+                ButtonSize = new Vector2(250, 76),
                 Text = "Button",
                 AssetReference = "Fonts/Default",
                 Color = Color.Black,
