@@ -8,34 +8,30 @@ using System.Threading.Tasks;
 using GameDevelopmentProject.Components.Screens;
 
 namespace GameDevelopmentProject.Components {
-    public class ObjectCollection<T> where T : IBaseObject {
+    public class ObjectCollection<T> : BaseObject where T : IBaseObject {
         public List<T> gameObjects = new List<T>();
 
-        private Game game;
+        public ObjectCollection(Game game): base(game) { }
 
-        public ObjectCollection(Game game) {
-            this.game = game;
-        }
-
-        public virtual void Initialize() {
+        public override void Initialize() {
             foreach (T gameObject in gameObjects) gameObject.Initialize();
         }
 
-        public virtual void LoadContent() {
+        public override void LoadContent() {
             foreach (T gameObject in gameObjects) gameObject.LoadContent();
         }
 
-        public virtual void UnloadContent() {
+        public override void UnloadContent() {
             foreach (T gameObject in gameObjects) gameObject.UnloadContent();
         }
 
-        public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch) {
+        public override void Draw(GameTime gameTime, SpriteBatch spriteBatch) {
             foreach (T gameObject in gameObjects) {
                 if (gameObject._Visible()) gameObject.Draw(gameTime, spriteBatch);
             }
         }
 
-        public virtual void Update(GameTime gameTime) {
+        public override void Update(GameTime gameTime) {
             foreach (T gameObject in gameObjects) {
                 if (gameObject._Active()) gameObject.Update(gameTime);
             }

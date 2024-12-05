@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.Components.Drawables {
-    public abstract class BaseDrawable<T> : IBaseObject {
+    public abstract class BaseDrawable<T> : BaseObject {
         public string AssetReference;
         public Vector2 Position {
             get { 
@@ -26,30 +26,21 @@ namespace GameDevelopmentProject.Components.Drawables {
         public float Scale = 1f;
         public Anchor GlobalAnchor = Anchor.TOP_LEFT; // where 0,0 is in global coordinates
         public Anchor LocalAnchor = Anchor.TOP_LEFT; // where 0,0 is inside the element
-        public bool Visible = true;
-        public bool Active = true;
 
         protected T asset;
-        protected Game game;
         protected Vector2 position;
 
-        public BaseDrawable(Game game) {
-            this.game = game;
-        }
+        public BaseDrawable(Game game) : base(game) { }
 
-        public virtual void Initialize() { }
-
-        public virtual void LoadContent() {
+        public override void LoadContent() {
             asset = game.Content.Load<T>(AssetReference);
         }
 
-        public virtual void UnloadContent() {
+        public override void UnloadContent() {
             game.Content.UnloadAsset(AssetReference);
         }
 
-        public abstract void Draw(GameTime gameTime, SpriteBatch spriteBatch);
-
-        public virtual void Update(GameTime gameTime) { }
+        public override void Update(GameTime gameTime) { }
 
         protected Vector2 GetOffset(Anchor anchor, float width, float height) {
             float x = 0;
@@ -73,14 +64,6 @@ namespace GameDevelopmentProject.Components.Drawables {
             }
 
             return new Vector2(x, y);
-        }
-
-        public bool _Visible() {
-            return Visible;
-        }
-
-        public bool _Active() {
-            return Active;
         }
     }
 }

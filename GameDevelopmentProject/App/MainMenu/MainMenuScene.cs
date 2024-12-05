@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace GameDevelopmentProject.App.MainMenu {
     public class MainMenuScene : BaseScene {
         public MainMenuScene(Game game) : base(game) {
-            Add(new Foreground(game));
+            Add(new SplashScreen(game));
         }
     }
 }

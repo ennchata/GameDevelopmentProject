@@ -12,8 +12,8 @@ using GameDevelopmentProject.Components.UI.Commands;
 
 namespace GameDevelopmentProject.App.MainMenu
 {
-    public class Foreground : BaseScreen {
-        public Foreground(Game game) : base(game) {
+    public class SplashScreen : BaseScreen {
+        public SplashScreen(Game game) : base(game) {
             Add(new ImageDrawable(game) {
                 AssetReference = "Images/templogo",
                 GlobalAnchor = Anchor.TOP_CENTER,
