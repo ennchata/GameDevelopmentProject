@@ -18,6 +18,9 @@ namespace GameDevelopmentProject.Components.UI
         public bool Hovering = false;
         public IButtonCommand[] Commands;
         public Vector2 ButtonSize;
+        public Color BackgroundColor = Color.White;
+        public Color HoverColor = Color.Lerp(Color.White, Color.Black, 0.15f);
+
         public new Vector2 Position {
             get {
                 return position
@@ -49,7 +52,7 @@ namespace GameDevelopmentProject.Components.UI
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch) {
-            spriteBatch.Draw(background, Area, Hovering ? Color.Gray : Color.White);
+            spriteBatch.Draw(background, Area, Hovering ? HoverColor : BackgroundColor);
             spriteBatch.DrawString(asset, Text, Area.Center.ToVector2() - Size / 2, Color);
         }
 

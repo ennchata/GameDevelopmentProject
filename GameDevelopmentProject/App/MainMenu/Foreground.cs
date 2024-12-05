@@ -31,14 +31,30 @@ namespace GameDevelopmentProject.App.MainMenu
             });
 
             Add(new Button(game) {
-                ButtonSize = new Vector2(250, 76),
-                Text = "Button",
+                ButtonSize = new Vector2(300, 60),
+                Position = new Vector2(0, -250),
+                Text = "Start Game",
                 AssetReference = "Fonts/Default",
                 Color = Color.Black,
-                GlobalAnchor = Anchor.CENTER,
+                GlobalAnchor = Anchor.BOTTOM_CENTER,
                 LocalAnchor = Anchor.CENTER,
                 Commands = new IButtonCommand[] {
                     new DebugCommand(game, "Main menu button")
+                }
+            });
+
+            Add(new Button(game) {
+                ButtonSize = new Vector2(300, 60),
+                Position = new Vector2(0, -160),
+                Text = "Exit to Desktop",
+                AssetReference = "Fonts/Default",
+                Color = Color.White,
+                BackgroundColor = Color.Red,
+                HoverColor = Color.Lerp(Color.Red, Color.Black, 0.15f),
+                GlobalAnchor = Anchor.BOTTOM_CENTER,
+                LocalAnchor = Anchor.CENTER,
+                Commands = new IButtonCommand[] {
+                    new GameExitCommand(game)
                 }
             });
         }

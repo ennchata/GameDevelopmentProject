@@ -26,6 +26,8 @@ namespace GameDevelopmentProject.Components.Drawables {
         public float Scale = 1f;
         public Anchor GlobalAnchor = Anchor.TOP_LEFT; // where 0,0 is in global coordinates
         public Anchor LocalAnchor = Anchor.TOP_LEFT; // where 0,0 is inside the element
+        public bool Visible = true;
+        public bool Active = true;
 
         protected T asset;
         protected Game game;
