@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameDevelopmentProject.Components.UI {
+namespace GameDevelopmentProject.Components.UI.Commands {
     public abstract class ButtonCommand : IButtonCommand {
         protected Game game;
 

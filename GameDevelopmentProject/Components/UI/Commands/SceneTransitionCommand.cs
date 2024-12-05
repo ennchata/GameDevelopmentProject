@@ -6,19 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameDevelopmentProject.Components.UI.Commands
-{
-    public class SceneTransitionCommand : ButtonCommand
-    {
+namespace GameDevelopmentProject.Components.UI.Commands {
+    public class SceneTransitionCommand : ButtonCommand {
         private string scene;
 
-        public SceneTransitionCommand(Game game, string scene) : base(game)
-        {
+        public SceneTransitionCommand(Game game, string scene) : base(game) {
             this.scene = scene;
         }
 
-        public override void Invoke(GameTime gameTime)
-        {
+        public override void Invoke(GameTime gameTime) {
             SceneManager.GetInstance(game).SetActive(scene);
         }
     }
