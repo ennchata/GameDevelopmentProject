@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.Components.UI.Commands {
-    public class GameExitCommand : ButtonCommand {
+    public class GameExitCommand : BaseCommand {
         public GameExitCommand(Game game) : base(game) { }
 
         public override void Invoke(GameTime gameTime) {

@@ -9,9 +9,11 @@ using GameDevelopmentProject.Components.Screens;
 
 namespace GameDevelopmentProject.Components {
     public class ObjectCollection<T> : BaseObject where T : IBaseObject {
-        public List<T> gameObjects = new List<T>();
+        public List<T> gameObjects;
 
-        public ObjectCollection(Game game): base(game) { }
+        public ObjectCollection(Game game): base(game) {
+            gameObjects = new List<T>();
+        }
 
         public override void Initialize() {
             foreach (T gameObject in gameObjects) gameObject.Initialize();

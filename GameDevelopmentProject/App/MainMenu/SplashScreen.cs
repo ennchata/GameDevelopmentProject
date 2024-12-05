@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GameDevelopmentProject.Components.UI.Commands;
+using GameDevelopmentProject.Components.Scenes;
 
 namespace GameDevelopmentProject.App.MainMenu
 {
@@ -39,7 +40,7 @@ namespace GameDevelopmentProject.App.MainMenu
                 GlobalAnchor = Anchor.BOTTOM_CENTER,
                 LocalAnchor = Anchor.CENTER,
                 Commands = new IButtonCommand[] {
-                    new DebugCommand(game, "Main menu button")
+                    new SceneTransitionCommand(game, "LevelEasy")
                 }
             });
 

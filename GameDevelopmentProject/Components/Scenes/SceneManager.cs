@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.Components.Scenes {
     public class SceneManager {
-        public Dictionary<string, BaseScene> scenes = new Dictionary<string, BaseScene>();
+        public Dictionary<string, BaseScene> scenes;
         public BaseScene activeScene;
 
         private Game game;
@@ -17,6 +17,7 @@ namespace GameDevelopmentProject.Components.Scenes {
 
         private SceneManager(Game game) {
             this.game = game;
+            scenes =  new Dictionary<string, BaseScene>();
             SetActive("MainMenu", new MainMenuScene(game));
         }
 

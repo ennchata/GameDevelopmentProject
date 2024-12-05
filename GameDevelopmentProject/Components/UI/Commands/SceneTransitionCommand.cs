@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.Components.UI.Commands {
-    public class SceneTransitionCommand : ButtonCommand {
+    public class SceneTransitionCommand : BaseCommand {
         private string scene;
 
         public SceneTransitionCommand(Game game, string scene) : base(game) {

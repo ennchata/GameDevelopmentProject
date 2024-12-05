@@ -6,10 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.Components.UI.Commands {
-    public abstract class ButtonCommand : IButtonCommand {
+    public abstract class BaseCommand : IButtonCommand {
         protected Game game;
 
-        public ButtonCommand(Game game) {
+        public BaseCommand(Game game) {
             this.game = game;
         }
 

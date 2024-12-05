@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.Components.UI.Commands {
-    public class DebugCommand : ButtonCommand {
+    public class DebugCommand : BaseCommand {
         private string message;
 
         public DebugCommand(Game game, string message) : base(game) {

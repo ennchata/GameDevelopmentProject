@@ -8,8 +8,18 @@ using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.App.MainMenu {
     public class MainMenuScene : BaseScene {
+        SplashScreen splashScreen;
+        DifficultySelectionScreen difficultySelectionScreen;
+
         public MainMenuScene(Game game) : base(game) {
-            Add(new SplashScreen(game));
+            splashScreen = new SplashScreen(game);
+            difficultySelectionScreen = new DifficultySelectionScreen(game) {
+                Active = false,
+                Visible = false
+            };
+
+            Add(splashScreen);
+            Add(difficultySelectionScreen);
         }
     }
 }
