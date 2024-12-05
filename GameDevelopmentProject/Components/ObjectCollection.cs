@@ -30,11 +30,15 @@ namespace GameDevelopmentProject.Components {
         }
 
         public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch) {
-            foreach (T gameObject in gameObjects) gameObject.Draw(gameTime, spriteBatch);
+            foreach (T gameObject in gameObjects) {
+                if (gameObject._Visible()) gameObject.Draw(gameTime, spriteBatch);
+            }
         }
 
         public virtual void Update(GameTime gameTime) {
-            foreach (T gameObject in gameObjects) gameObject.Update(gameTime);
+            foreach (T gameObject in gameObjects) {
+                if (gameObject._Active()) gameObject.Update(gameTime);
+            }
         }
 
         public void Add(T gameObject) {

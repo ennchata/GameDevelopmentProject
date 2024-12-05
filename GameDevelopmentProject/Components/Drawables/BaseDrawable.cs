@@ -74,5 +74,13 @@ namespace GameDevelopmentProject.Components.Drawables {
 
             return new Vector2(x, y);
         }
+
+        public bool _Visible() {
+            return Visible;
+        }
+
+        public bool _Active() {
+            return Active;
+        }
     }
 }

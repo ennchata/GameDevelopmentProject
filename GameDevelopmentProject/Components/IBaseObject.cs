@@ -13,5 +13,7 @@ namespace GameDevelopmentProject.Components {
         public void UnloadContent();
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch);
         public void Update(GameTime gameTime);
+        public bool _Visible();
+        public bool _Active();
     }
 }
