@@ -1,4 +1,5 @@
 ﻿using GameDevelopmentProject.Components.Drawables;
+using GameDevelopmentProject.Components.UI.Commands;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -8,7 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameDevelopmentProject.Components.UI {
+namespace GameDevelopmentProject.Components.UI
+{
     public class Button : TextDrawable {
         private Texture2D background;
         private MouseState currentState, previousState;

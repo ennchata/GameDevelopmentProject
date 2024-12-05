@@ -8,8 +8,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GameDevelopmentProject.Components.UI.Commands;
 
-namespace GameDevelopmentProject.App.MainMenu {
+namespace GameDevelopmentProject.App.MainMenu
+{
     public class Foreground : BaseScreen {
         public Foreground(Game game) : base(game) {
             Add(new ImageDrawable(game) {
