@@ -18,7 +18,10 @@ namespace GameDevelopmentProject.Components.Drawables {
                 position = value;
             }
         }
-        public Vector2 Size = Vector2.Zero;
+        public Vector2 Size {
+            get { return size; }
+            set { size = value; }
+        }
         public Rectangle Area { get {
                 return new Rectangle((int)Position.X, (int)Position.Y, (int)Size.X, (int)Size.Y);
         } }
@@ -29,6 +32,7 @@ namespace GameDevelopmentProject.Components.Drawables {
 
         protected T asset;
         protected Vector2 position;
+        protected Vector2 size = Vector2.Zero;
 
         public BaseDrawable(Game game) : base(game) { }
 

@@ -25,7 +25,7 @@ namespace GameDevelopmentProject {
 
         protected override void LoadContent() {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            sceneManager.activeScene.LoadContent();
+            foreach (var scene in sceneManager.scenes) scene.Value.LoadContent();
         }
 
         protected override void Update(GameTime gameTime) {

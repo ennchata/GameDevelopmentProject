@@ -1,4 +1,5 @@
-﻿using GameDevelopmentProject.App.MainMenu;
+﻿using GameDevelopmentProject.App.Levels.Easy;
+using GameDevelopmentProject.App.MainMenu;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace GameDevelopmentProject.Components.Scenes {
             this.game = game;
             scenes =  new Dictionary<string, BaseScene>();
             SetActive("MainMenu", new MainMenuScene(game));
+            Add("LevelEasy", new LevelEasyScene(game));
         }
 
         public static SceneManager GetInstance(Game game) {
