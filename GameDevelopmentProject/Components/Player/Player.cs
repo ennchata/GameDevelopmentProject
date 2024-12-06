@@ -29,8 +29,17 @@ namespace GameDevelopmentProject.Components.Player {
             KeyboardState state = Keyboard.GetState();
             AffectVelocity(ref xTranslate, state, Keys.Left, Keys.Right);
             AffectVelocity(ref yTranslate, state, Keys.Up, Keys.Down);
-            
-            position += new Vector2(xTranslate * gameTime.ElapsedGameTime.Milliseconds, yTranslate * gameTime.ElapsedGameTime.Milliseconds);
+
+            float xBound = game.GraphicsDevice.Viewport.Width / 2f - Size.X;
+            float yBound = game.GraphicsDevice.Viewport.Height / 2f - Size.Y;
+            position = new Vector2(
+                Math.Clamp(position.X + xTranslate * gameTime.ElapsedGameTime.Milliseconds,
+                           -xBound - Size.X,
+                           xBound),
+                Math.Clamp(position.Y + yTranslate * gameTime.ElapsedGameTime.Milliseconds,
+                           -yBound - Size.Y,
+                           yBound)
+            );
         }
 
         private void AffectVelocity(ref float translate, KeyboardState state, Keys negativeKey, Keys positiveKey) {
