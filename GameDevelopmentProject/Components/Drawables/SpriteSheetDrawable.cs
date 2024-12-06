@@ -17,10 +17,6 @@ namespace GameDevelopmentProject.Components.Drawables {
 
         public SpriteSheetDrawable(Game game) : base(game) { }
 
-        public override void LoadContent() {
-            base.LoadContent();
-        }
-
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch) {
             spriteBatch.Draw(asset, Position, Source, Color, 0f, Vector2.Zero, Scale, SpriteEffects.None, 0f);
         }
