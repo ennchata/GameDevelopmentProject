@@ -11,8 +11,7 @@ using System.Threading.Tasks;
 using GameDevelopmentProject.Components.UI.Commands;
 using GameDevelopmentProject.Components.Scenes;
 
-namespace GameDevelopmentProject.App.MainMenu
-{
+namespace GameDevelopmentProject.App.MainMenu {
     public class SplashScreen : BaseScreen {
         public SplashScreen(Game game) : base(game) {
             Add(new ImageDrawable(game) {
