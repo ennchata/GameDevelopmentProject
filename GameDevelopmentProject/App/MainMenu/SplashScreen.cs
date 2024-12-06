@@ -19,11 +19,11 @@ namespace GameDevelopmentProject.App.MainMenu
                 AssetReference = "Images/templogo",
                 GlobalAnchor = Anchor.TOP_CENTER,
                 LocalAnchor = Anchor.TOP_CENTER,
-                Position = new Vector2(0, 10)
+                Position = new Vector2(0, 50)
             });
 
             Add(new TextDrawable(game) {
-                Text = "game made by Thibo Maes",
+                Text = "made by Thibo Maes",
                 AssetReference = "Fonts/Default",
                 Color = Color.White,
                 GlobalAnchor = Anchor.TOP_CENTER,
