@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace GameDevelopmentProject.App.Levels.Easy {
     public class LevelEasyScene : BaseScene {
         public LevelEasyScene(Game game) : base(game) {
-            Add(new LevelObjectsScreen(game));
+            Add("LevelObjects", new LevelObjectsScreen(game));
         }
     }
 }

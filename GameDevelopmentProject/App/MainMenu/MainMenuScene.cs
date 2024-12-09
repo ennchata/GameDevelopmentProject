@@ -18,8 +18,8 @@ namespace GameDevelopmentProject.App.MainMenu {
                 Visible = false
             };
 
-            Add(splashScreen);
-            Add(difficultySelectionScreen);
+            Add("Splash", splashScreen);
+            Add("DifficultySelection", difficultySelectionScreen);
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.Components.Scenes {
-    public class BaseScene : ObjectCollection<IBaseScreen> {
+    public class BaseScene : NamedObjectCollection<IBaseScreen> {
         public BaseScene(Game game) : base(game) { }
     }
 }
