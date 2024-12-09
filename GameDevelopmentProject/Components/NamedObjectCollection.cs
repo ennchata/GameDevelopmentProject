@@ -50,5 +50,10 @@ namespace GameDevelopmentProject.Components {
             gameObjects.TryGetValue(identifier, out T gameObject);
             return gameObject;
         }
+
+        public BaseObject GetAsObject(string identifier) {
+            gameObjects.TryGetValue(identifier, out T gameObject);
+            return gameObject as BaseObject;
+        }
     }
 }
