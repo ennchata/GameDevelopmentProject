@@ -30,7 +30,7 @@ namespace GameDevelopmentProject.App.MainMenu {
                 GlobalAnchor = Anchor.TOP_CENTER,
                 LocalAnchor = Anchor.TOP_CENTER,
                 Commands = new IButtonCommand[] {
-                    new DebugCommand(game, "Main menu button")
+                    new SceneTransitionCommand(game, "LevelEasy")
                 }
             });
         }

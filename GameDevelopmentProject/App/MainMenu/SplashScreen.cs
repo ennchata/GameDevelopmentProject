@@ -39,7 +39,10 @@ namespace GameDevelopmentProject.App.MainMenu {
                 GlobalAnchor = Anchor.BOTTOM_CENTER,
                 LocalAnchor = Anchor.CENTER,
                 Commands = new IButtonCommand[] {
-                    new SceneTransitionCommand(game, "LevelEasy")
+                    new ScreenActiveCommand(game, "DifficultySelection", true),
+                    new ScreenActiveCommand(game, "Splash", false),
+                    new ScreenVisibleCommand(game, "DifficultySelection", true),
+                    new ScreenVisibleCommand(game, "Splash", false),
                 }
             });
 
