@@ -13,7 +13,7 @@ using GameDevelopmentProject.Components.Scenes;
 
 namespace GameDevelopmentProject.App.MainMenu {
     public class SplashScreen : BaseScreen {
-        public SplashScreen(Game game) : base(game) {
+        public SplashScreen(Game game) : base(game)  {
             Add(new ImageDrawable(game) {
                 AssetReference = "Images/templogo",
                 GlobalAnchor = Anchor.TOP_CENTER,

@@ -11,6 +11,7 @@ namespace GameDevelopmentProject.Components.Scenes {
     public class SceneManager {
         public Dictionary<string, BaseScene> scenes;
         public BaseScene activeScene;
+        public bool GamePaused = false;
 
         private Game game;
         private static SceneManager instance;
