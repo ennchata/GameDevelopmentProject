@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameDevelopmentProject.Components.Player {
+namespace GameDevelopmentProject.Components.Gameplay {
     public class Player : SpriteSheetDrawable {
         private readonly float maxVelocity = 0.5f;
         private readonly float minVelocity = 0.02f;

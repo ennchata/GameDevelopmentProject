@@ -1,5 +1,5 @@
 ﻿using GameDevelopmentProject.Components.Drawables;
-using GameDevelopmentProject.Components.Player;
+using GameDevelopmentProject.Components.Gameplay;
 using GameDevelopmentProject.Components.Screens;
 using Microsoft.Xna.Framework;
 using System;
