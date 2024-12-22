@@ -33,21 +33,21 @@ namespace GameDevelopmentProject.App.Shared {
                 GlobalAnchor = Anchor.TOP_CENTER,
                 LocalAnchor = Anchor.TOP_CENTER,
                 Commands = new IButtonCommand[] {
-                    new SceneTransitionCommand(game, "LevelEasy")
+                    new GamePauseCommand(game, false)
                 }
             });
-            
+
             Add(new Button(game) {
                 ButtonSize = new Vector2(300, 60),
                 Position = new Vector2(0, 100),
-                Text = "Give Up",
+                Text = "Quit",
                 AssetReference = "Fonts/Default",
                 Color = Color.White,
                 BackgroundColor = Color.Red,
                 GlobalAnchor = Anchor.TOP_CENTER,
                 LocalAnchor = Anchor.TOP_CENTER,
                 Commands = new IButtonCommand[] {
-                    new SceneTransitionCommand(game, "LevelEasy")
+                    new DebugCommand(game, "Quit")
                 }
             });
         }
