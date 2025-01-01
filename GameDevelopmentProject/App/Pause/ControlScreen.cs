@@ -1,5 +1,6 @@
 ﻿using GameDevelopmentProject.Components.Drawables;
 using GameDevelopmentProject.Components.Screens;
+using GameDevelopmentProject.Components.UI;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,8 @@ using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.App.Pause {
     public class ControlScreen : BaseScreen {
-        public ControlScreen(Game game) : base(game) {
+        public ControlScreen(Game game, string origin) : base(game) {
+            Add(new PauseHandler(game, origin, true));
             Add(new TextDrawable(game) {
                 Text = "Game Paused",
                 AssetReference = "Fonts/Default",

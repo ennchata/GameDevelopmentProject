@@ -12,14 +12,16 @@ namespace GameDevelopmentProject.Components.UI {
     public class PauseHandler : BaseObject {
         private string origin;
         private bool debounce = true;
+        private bool returning;
 
-        public PauseHandler(Game game, string origin) : base(game) {
+        public PauseHandler(Game game, string origin, bool returning = false) : base(game) {
             this.origin = origin;
+            this.returning = returning;
         }
 
         public override void Update(GameTime gameTime) {
             KeyboardState state = Keyboard.GetState();
-            if(!debounce && state.IsKeyDown(Keys.Escape)) SceneManager.GetInstance(game).SetActive("Pause" + origin);
+            if(!debounce && state.IsKeyDown(Keys.Escape)) SceneManager.GetInstance(game).SetActive((returning ? "" : "Pause") + origin);
 
             debounce = state.IsKeyDown(Keys.Escape);
         }
