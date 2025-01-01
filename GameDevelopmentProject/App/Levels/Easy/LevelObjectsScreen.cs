@@ -1,6 +1,7 @@
 ﻿using GameDevelopmentProject.Components.Drawables;
 using GameDevelopmentProject.Components.Gameplay;
 using GameDevelopmentProject.Components.Screens;
+using GameDevelopmentProject.Components.UI;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace GameDevelopmentProject.App.Levels.Easy {
     public class LevelObjectsScreen : BaseScreen {
         public LevelObjectsScreen(Game game) : base(game) {
             Add(new Player(game));
+            Add(new PauseHandler(game, "LevelEasy"));
         }
     }
 }
