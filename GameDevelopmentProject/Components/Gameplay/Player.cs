@@ -1,8 +1,10 @@
 ﻿using GameDevelopmentProject.Components.Drawables;
+using GameDevelopmentProject.Components.Scenes;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,6 +42,11 @@ namespace GameDevelopmentProject.Components.Gameplay {
                            -yBound - Size.Y,
                            yBound)
             );
+
+            var collidables = SceneManager.GetInstance(game).activeScene.Get("LevelObjects").GetCollidables();
+            foreach (ICollidable collidable in collidables) {
+                if (collidable.IsColliding(this)) collidable.Invoke();
+            }
         }
 
         private void AffectVelocity(ref float translate, KeyboardState state, Keys negativeKey, Keys positiveKey) {
