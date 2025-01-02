@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace GameDevelopmentProject.Components.UI
 {
     public class Button : TextDrawable {
-        private Texture2D background;
+        private BlankDrawable background;
         private MouseState currentState, previousState;
 
         public bool Hovering = false;
@@ -37,22 +37,26 @@ namespace GameDevelopmentProject.Components.UI
             }
         }
 
-        public Button(Game game) : base(game) { }
+        public Button(Game game) : base(game) {
+            background = new BlankDrawable(game) {
+                GlobalAnchor = GlobalAnchor,
+                LocalAnchor = LocalAnchor,
+            };
+        }
 
 
         public override void LoadContent() {
             base.LoadContent();
-            background = new Texture2D(game.GraphicsDevice, 1, 1);
-            background.SetData(new[] { Color.White });
+            background.LoadContent();
         }
 
         public override void UnloadContent() {
             base.UnloadContent();
-            background.Dispose();
+            background.UnloadContent();
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch) {
-            spriteBatch.Draw(background, Area, Hovering ? HoverColor : BackgroundColor);
+            background.Draw(gameTime, spriteBatch);
             spriteBatch.DrawString(asset, Text, Area.Center.ToVector2() - Size / 2, Color);
         }
 
@@ -60,8 +64,12 @@ namespace GameDevelopmentProject.Components.UI
             previousState = currentState;
             currentState = Mouse.GetState();
             Rectangle mouseRectangle = new Rectangle(currentState.X, currentState.Y, 1, 1);
-
             Hovering = Area.Intersects(mouseRectangle);
+
+            background.Color = Hovering ? HoverColor : BackgroundColor;
+            background.Position = Position;
+            background.Size = ButtonSize;
+
             if (Hovering && currentState.LeftButton == ButtonState.Released && previousState.LeftButton == ButtonState.Pressed) {
                 foreach (IButtonCommand command in Commands) command.Invoke(gameTime);
             }
