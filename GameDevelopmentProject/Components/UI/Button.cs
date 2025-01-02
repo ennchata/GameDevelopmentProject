@@ -9,8 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameDevelopmentProject.Components.UI
-{
+namespace GameDevelopmentProject.Components.UI {
     public class Button : TextDrawable {
         private BlankDrawable background;
         private MouseState currentState, previousState;
