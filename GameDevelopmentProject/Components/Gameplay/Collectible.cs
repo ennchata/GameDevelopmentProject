@@ -15,12 +15,12 @@ namespace GameDevelopmentProject.Components.Gameplay {
             GlobalAnchor = Anchor.CENTER;
             LocalAnchor = Anchor.CENTER;
         }
-        public bool IsColliding(Player player) {
+        public virtual bool IsColliding(Player player) {
             Vector2 distance = Area.Center.ToVector2() - player.Area.Center.ToVector2();
             return distance.Length() <= Source.Width;
         }
 
-        public void Invoke() {
+        public virtual void Invoke() {
             Visible = false;
             Active = false;
         }
