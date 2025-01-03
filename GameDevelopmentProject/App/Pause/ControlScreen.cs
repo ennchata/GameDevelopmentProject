@@ -42,6 +42,21 @@ namespace GameDevelopmentProject.App.Pause {
             Add(new Button(game) {
                 ButtonSize = new Vector2(300, 60),
                 Position = new Vector2(0, 100),
+                Text = "Return to Menu",
+                AssetReference = "Fonts/Default",
+                Color = Color.White,
+                BackgroundColor = Color.OrangeRed,
+                HoverColor = Color.Lerp(Color.OrangeRed, Color.Black, 0.15f),
+                GlobalAnchor = Anchor.TOP_CENTER,
+                LocalAnchor = Anchor.TOP_CENTER,
+                Commands = new IButtonCommand[] {
+                    new MainMenuCommand(game, origin)
+                }
+            });
+            
+            Add(new Button(game) {
+                ButtonSize = new Vector2(300, 60),
+                Position = new Vector2(0, 190),
                 Text = "Quit Game",
                 AssetReference = "Fonts/Default",
                 Color = Color.White,
