@@ -8,6 +8,6 @@ using System.Threading.Tasks;
 namespace GameDevelopmentProject.Components.Gameplay {
     public interface ICollidable {
         public bool IsColliding(Player player);
-        public void Invoke();
+        public void Invoke(Player player);
     }
 }

@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.Components.Gameplay {
     public class Player : SpriteSheetDrawable {
+        public int Score = 0;
+        public int Health = 100;
+
         private readonly float maxVelocity = 0.5f;
         private readonly float minVelocity = 0.02f;
         private readonly float velocityDecay = 1.15f;
@@ -27,6 +30,9 @@ namespace GameDevelopmentProject.Components.Gameplay {
 
         public override void Update(GameTime gameTime) {
             base.Update(gameTime);
+            if (Health <= 0) {
+                // ...
+            }
 
             KeyboardState state = Keyboard.GetState();
             AffectVelocity(ref xTranslate, state, Keys.Left, Keys.Right);
@@ -43,9 +49,9 @@ namespace GameDevelopmentProject.Components.Gameplay {
                            yBound)
             );
 
-            var collidables = SceneManager.GetInstance(game).activeScene.Get("LevelObjects").GetCollidables();
+            List<ICollidable> collidables = SceneManager.GetInstance(game).activeScene.Get("LevelObjects").GetCollidables();
             foreach (ICollidable collidable in collidables) {
-                if (collidable.IsColliding(this)) collidable.Invoke();
+                if (collidable.IsColliding(this)) collidable.Invoke(this);
             }
         }
 
