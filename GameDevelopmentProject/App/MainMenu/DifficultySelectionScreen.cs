@@ -12,6 +12,10 @@ using System.Threading.Tasks;
 namespace GameDevelopmentProject.App.MainMenu {
     public class DifficultySelectionScreen : BaseScreen {
         public DifficultySelectionScreen(Game game) : base(game) {
+            CreateObjects();
+        }
+
+        public override void CreateObjects() {
             Add(new TextDrawable(game) {
                 Text = "Select Difficulty Level",
                 AssetReference = "Fonts/Default",

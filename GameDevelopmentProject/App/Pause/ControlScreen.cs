@@ -11,7 +11,15 @@ using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.App.Pause {
     public class ControlScreen : BaseScreen {
+        private string origin;
+
         public ControlScreen(Game game, string origin) : base(game) {
+            this.origin = origin;
+
+            CreateObjects();
+        }
+
+        public override void CreateObjects() {
             Add(new PauseHandler(game, origin, true));
             Add(new TextDrawable(game) {
                 Text = "Game Paused",

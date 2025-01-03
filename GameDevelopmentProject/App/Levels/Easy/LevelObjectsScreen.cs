@@ -12,6 +12,9 @@ using System.Threading.Tasks;
 namespace GameDevelopmentProject.App.Levels.Easy {
     public class LevelObjectsScreen : BaseScreen {
         public LevelObjectsScreen(Game game) : base(game) {
+            CreateObjects();
+        }
+        public override void CreateObjects() {
             Add(new Collectible(game) {
                 Position = new Vector2(0, 50)
             });
