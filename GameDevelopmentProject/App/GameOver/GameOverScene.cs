@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.App.GameOver {
     public class GameOverScene : BaseScene {
-        public GameOverScene(Game game) : base(game) {
-            Add("Control", new ControlScreen(game));
+        public GameOverScene(Game game, string text = "Game Over!") : base(game) {
+            Add("Control", new ControlScreen(game, text));
         }
     }
 }

@@ -54,6 +54,11 @@ namespace GameDevelopmentProject.Components.Gameplay {
                 Visible = true;
             }
 
+            if (Score >= MaxScore) {
+                SceneManager.GetInstance(game).SetActive("GameWon");
+                return;
+            }
+
             KeyboardState state = Keyboard.GetState();
             AffectVelocity(ref xTranslate, state, Keys.Left, Keys.Right);
             AffectVelocity(ref yTranslate, state, Keys.Up, Keys.Down);

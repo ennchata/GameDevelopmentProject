@@ -11,14 +11,16 @@ using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.App.GameOver {
     public class ControlScreen : BaseScreen {
+        private string text;
 
-        public ControlScreen(Game game) : base(game) {
+        public ControlScreen(Game game, string text) : base(game) {
+            this.text = text;
             CreateObjects();
         }
 
         public override void CreateObjects() {
             Add(new TextDrawable(game) {
-                Text = "Game Over!",
+                Text = text,
                 AssetReference = "Fonts/Default",
                 Color = Color.White,
                 GlobalAnchor = Anchor.TOP_CENTER,

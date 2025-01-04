@@ -27,6 +27,7 @@ namespace GameDevelopmentProject.Components.Scenes {
             Add("PauseLevelEasy", new PauseScene(game, "LevelEasy"));
 
             Add("GameOver", new GameOverScene(game));
+            Add("GameWon", new GameOverScene(game, "You Won!"));
         }
 
         public static SceneManager GetInstance(Game game) {

@@ -164,9 +164,55 @@ namespace GameDevelopmentProject.App.Levels.Easy {
             });
             #endregion
 
+            #region Vierde collectie (30-40)
+            ScoreConditionalCollection<BaseObject> collection4 = new ScoreConditionalCollection<BaseObject>(game, player, (_) => _.Score >= 30 && _.Score < 40);
+            collection4.Add(new Collectible(game) {
+                Position = new Vector2(600, 0),
+                Source = new Rectangle(30, 0, 25, 25),
+                Behavior = InflictedBehavior.SCORE,
+                Value = 10
+            });
+
+            collection4.Add(new TextDrawable(game) {
+                Position = new Vector2(0, 50),
+                Text = "Be careful, some red orbs slowly chase you!",
+                AssetReference = "Fonts/Default",
+                LocalAnchor = Anchor.TOP_CENTER,
+                GlobalAnchor = Anchor.TOP_CENTER
+            });
+            #endregion
+
+            #region Vijfde collectie (40-50)
+            ScoreConditionalCollection<BaseObject> collection5 = new ScoreConditionalCollection<BaseObject>(game, player, (_) => _.Score >= 40 && _.Score < 50);
+            collection5.Add(new Collectible(game) {
+                Position = new Vector2(0, 0),
+                Source = new Rectangle(30, 0, 25, 25),
+                Behavior = InflictedBehavior.SCORE,
+                Value = 10
+            });
+
+            collection5.Add(new TextDrawable(game) {
+                Position = new Vector2(0, 50),
+                Text = "Awesome! You understand the basics of the game now.",
+                AssetReference = "Fonts/Default",
+                LocalAnchor = Anchor.TOP_CENTER,
+                GlobalAnchor = Anchor.TOP_CENTER
+            });
+
+            collection5.Add(new TextDrawable(game) {
+                Position = new Vector2(0, 75),
+                Text = "Ready to face a real challenge? Try to beat the Normal difficulty!",
+                AssetReference = "Fonts/Default",
+                LocalAnchor = Anchor.TOP_CENTER,
+                GlobalAnchor = Anchor.TOP_CENTER
+            });
+            #endregion
+
             Add(collection1);
             Add(collection2);
             Add(collection3);
+            Add(collection4);
+            Add(collection5);
             Add(healthDisplay);
             Add(scoreDisplay);
             Add(player);
