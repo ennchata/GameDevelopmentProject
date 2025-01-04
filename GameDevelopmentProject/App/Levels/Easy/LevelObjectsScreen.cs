@@ -107,7 +107,7 @@ namespace GameDevelopmentProject.App.Levels.Easy {
 
             collection2.Add(new TextDrawable(game) {
                 Position = new Vector2(0, 50),
-                Text = "The green orbs move! Try to dodge them, they hurt you.)",
+                Text = "The green orbs move! Try to dodge them, they hurt you.",
                 AssetReference = "Fonts/Default",
                 LocalAnchor = Anchor.TOP_CENTER,
                 GlobalAnchor = Anchor.TOP_CENTER
