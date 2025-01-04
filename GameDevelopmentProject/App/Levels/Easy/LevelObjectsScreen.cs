@@ -1,4 +1,5 @@
-﻿using GameDevelopmentProject.Components.Drawables;
+﻿using GameDevelopmentProject.Components;
+using GameDevelopmentProject.Components.Drawables;
 using GameDevelopmentProject.Components.Gameplay;
 using GameDevelopmentProject.Components.Screens;
 using GameDevelopmentProject.Components.UI;
@@ -31,11 +32,23 @@ namespace GameDevelopmentProject.App.Levels.Easy {
                 AssetReference = "Fonts/Default"
             };
 
-            Add(new Collectible(game) {
+            // easiest level collection
+            ScoreConditionalCollection<BaseObject> collection1 = new ScoreConditionalCollection<BaseObject>(game, player, (_) => _.Score < 10);
+            collection1.Add(new Collectible(game) {
                 Position = new Vector2(0, 50),
-                Behavior = InflictedBehavior.DAMAGE,
+                Behavior = InflictedBehavior.SCORE,
                 Value = 10
             });
+            collection1.Add(new TextDrawable(game) {
+                Position = new Vector2(0, 50),
+                Text = "Pick up yellow orbs for score",
+                AssetReference = "Fonts/Default",
+                LocalAnchor = Anchor.TOP_CENTER,
+                GlobalAnchor = Anchor.TOP_CENTER
+            });
+
+            Add(collection1);
+
             Add(healthDisplay);
             Add(scoreDisplay);
             Add(player);

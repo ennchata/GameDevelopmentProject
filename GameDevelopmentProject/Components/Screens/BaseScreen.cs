@@ -13,7 +13,18 @@ namespace GameDevelopmentProject.Components.Screens {
         public BaseScreen(Game game) : base(game) { }
 
         public List<ICollidable> GetCollidables() {
-            return gameObjects.Where(_ => _ is ICollidable).Select(_ => _ as ICollidable).ToList();
+            List<ICollidable> list = new List<ICollidable>();
+
+            // THIS IS HORRIBLE BUT IT WORKS
+            foreach(var collection in gameObjects
+                .Where(_ => _ is ScoreConditionalCollection<BaseObject>)
+                .Select(_ => _ as ScoreConditionalCollection<BaseObject>)) {
+                list.AddRange(collection.gameObjects.Where(_ => _ is ICollidable).Select(_ => _ as ICollidable));
+            }
+
+            list.AddRange(gameObjects.Where(_ => _ is ICollidable).Select(_ => _ as ICollidable));
+
+            return list;
         }
 
         public abstract void CreateObjects();

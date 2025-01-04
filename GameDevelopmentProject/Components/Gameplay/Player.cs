@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace GameDevelopmentProject.Components.Gameplay {
     public class Player : SpriteSheetDrawable {
         public int Score = 0;
-        public int Health = 5;
+        public int Health = 100;
 
         private readonly float maxVelocity = 0.5f;
         private readonly float minVelocity = 0.02f;
