@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace GameDevelopmentProject.Components.Gameplay {
     public class Player : SpriteSheetDrawable {
         public int Score = 0;
-        public int Health = 100;
+        public int Health = 5;
 
         private readonly float maxVelocity = 0.5f;
         private readonly float minVelocity = 0.02f;
@@ -30,8 +30,10 @@ namespace GameDevelopmentProject.Components.Gameplay {
 
         public override void Update(GameTime gameTime) {
             base.Update(gameTime);
+
             if (Health <= 0) {
-                // ...
+                SceneManager.GetInstance(game).SetActive("GameOver");
+                return;
             }
 
             KeyboardState state = Keyboard.GetState();

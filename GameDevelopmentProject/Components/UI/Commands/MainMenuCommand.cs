@@ -11,18 +11,20 @@ namespace GameDevelopmentProject.Components.UI.Commands {
     public class MainMenuCommand : BaseCommand {
         private string origin;
         
-        public MainMenuCommand(Game game, string origin) : base(game) {
+        public MainMenuCommand(Game game, string origin = "") : base(game) {
             this.origin = origin;
         }
 
         public override void Invoke(GameTime gameTime) {
             SceneManager sceneManager = SceneManager.GetInstance(game);
 
-            sceneManager.SetActive(origin);
-            foreach (var item in sceneManager.activeScene.gameObjects) {
-                item.Value.DestroyObjects();
-                item.Value.CreateObjects();
-                item.Value.LoadContent();
+            if (origin != "") {
+                sceneManager.SetActive(origin);
+                foreach (var item in sceneManager.activeScene.gameObjects) {
+                    item.Value.DestroyObjects();
+                    item.Value.CreateObjects();
+                    item.Value.LoadContent();
+                }
             }
 
             sceneManager.SetActive("MainMenu");

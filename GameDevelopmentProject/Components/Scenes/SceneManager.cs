@@ -1,4 +1,5 @@
-﻿using GameDevelopmentProject.App.Levels.Easy;
+﻿using GameDevelopmentProject.App.GameOver;
+using GameDevelopmentProject.App.Levels.Easy;
 using GameDevelopmentProject.App.MainMenu;
 using GameDevelopmentProject.App.Pause;
 using Microsoft.Xna.Framework;
@@ -24,6 +25,8 @@ namespace GameDevelopmentProject.Components.Scenes {
             SetActive("MainMenu", new MainMenuScene(game));
             Add("LevelEasy", new LevelEasyScene(game));
             Add("PauseLevelEasy", new PauseScene(game, "LevelEasy"));
+
+            Add("GameOver", new GameOverScene(game));
         }
 
         public static SceneManager GetInstance(Game game) {
