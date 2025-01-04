@@ -9,6 +9,12 @@ using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.Components {
     public class ScoreConditionalCollection<T> : ObjectCollection<T> where T : IBaseObject {
+        public new bool Active {
+            get {
+                return playerCondition.Invoke(player);
+            }
+        }
+
         private Player player;
         private Predicate<Player> playerCondition;
 

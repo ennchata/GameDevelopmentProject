@@ -14,7 +14,6 @@ namespace GameDevelopmentProject.Components.Gameplay {
 
         public Collectible(Game game) : base(game) {
             AssetReference = "Images/basic-sheet";
-            Source = new Rectangle(30, 30, 25, 25);
             GlobalAnchor = Anchor.CENTER;
             LocalAnchor = Anchor.CENTER;
         }

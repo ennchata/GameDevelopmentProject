@@ -18,7 +18,8 @@ namespace GameDevelopmentProject.Components.Screens {
             // THIS IS HORRIBLE BUT IT WORKS
             foreach(var collection in gameObjects
                 .Where(_ => _ is ScoreConditionalCollection<BaseObject>)
-                .Select(_ => _ as ScoreConditionalCollection<BaseObject>)) {
+                .Select(_ => _ as ScoreConditionalCollection<BaseObject>)
+                .Where(_ => _.Active)) {
                 list.AddRange(collection.gameObjects.Where(_ => _ is ICollidable).Select(_ => _ as ICollidable));
             }
 
