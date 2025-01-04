@@ -74,7 +74,7 @@ namespace GameDevelopmentProject.App.Levels.Easy {
             #region Tweede collectie (10-20)
             ScoreConditionalCollection<BaseObject> collection2 = new ScoreConditionalCollection<BaseObject>(game, player, (_) => _.Score >= 10 && _.Score < 20);
             collection2.Add(new Collectible(game) {
-                Position = new Vector2(620, 0),
+                Position = new Vector2(600, 0),
                 Source = new Rectangle(30, 0, 25, 25),
                 Behavior = InflictedBehavior.SCORE,
                 Value = 10
@@ -97,7 +97,7 @@ namespace GameDevelopmentProject.App.Levels.Easy {
                     });
                 } else collection2.Add(new LinearMovementCollectible(game) {
                     BeginPosition = new Vector2(60, i),
-                    EndPosition = new Vector2(620, i),
+                    EndPosition = new Vector2(600, i),
                     Source = new Rectangle(0, 30, 25, 25),
                     Period = 2500,
                     Behavior = InflictedBehavior.DAMAGE,
@@ -114,8 +114,49 @@ namespace GameDevelopmentProject.App.Levels.Easy {
             });
             #endregion
 
+            #region Derde collectie (20-30)
+            ScoreConditionalCollection<BaseObject> collection3 = new ScoreConditionalCollection<BaseObject>(game, player, (_) => _.Score >= 20 && _.Score < 30);
+            collection3.Add(new Collectible(game) {
+                Position = new Vector2(-600, 0),
+                Source = new Rectangle(30, 0, 25, 25),
+                Behavior = InflictedBehavior.SCORE,
+                Value = 10
+            });
+            for (int i = -630; i < 630; i += 35) {
+                collection3.Add(new Collectible(game) {
+                    Position = new Vector2(i, -60),
+                    Behavior = InflictedBehavior.DAMAGE,
+                    Source = new Rectangle(0, 0, 25, 25),
+                    Value = 100
+                });
+                collection3.Add(new Collectible(game) {
+                    Position = new Vector2(i, 60),
+                    Behavior = InflictedBehavior.DAMAGE,
+                    Source = new Rectangle(0, 0, 25, 25),
+                    Value = 100
+                });
+            }
+
+            collection3.Add(new CircularMovementCollectible(game) {
+                Behavior = InflictedBehavior.DAMAGE,
+                Source = new Rectangle(30, 30, 25, 25),
+                Period = 2500,
+                Radius = 100,
+                Value = 10
+            });
+
+            collection3.Add(new TextDrawable(game) {
+                Position = new Vector2(0, 50),
+                Text = "The blue orbs move in a circular path! They may be tricker to dodge.",
+                AssetReference = "Fonts/Default",
+                LocalAnchor = Anchor.TOP_CENTER,
+                GlobalAnchor = Anchor.TOP_CENTER
+            });
+            #endregion
+
             Add(collection1);
             Add(collection2);
+            Add(collection3);
             Add(healthDisplay);
             Add(scoreDisplay);
             Add(player);
