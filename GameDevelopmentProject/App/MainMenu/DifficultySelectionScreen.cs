@@ -34,6 +34,7 @@ namespace GameDevelopmentProject.App.MainMenu {
                 GlobalAnchor = Anchor.TOP_CENTER,
                 LocalAnchor = Anchor.TOP_CENTER,
                 Commands = new IButtonCommand[] {
+                    new RegenerateSceneCommand(game, "LevelEasy", "MainMenu"),
                     new SceneTransitionCommand(game, "LevelEasy")
                 }
             });
