@@ -57,7 +57,7 @@ namespace GameDevelopmentProject.App.Levels.Easy {
             }
             collection1.Add(new TextDrawable(game) {
                 Position = new Vector2(0, 50),
-                Text = "Pick up yellow orbs for score",
+                Text = "Pick up yellow orbs for score.",
                 AssetReference = "Fonts/Default",
                 LocalAnchor = Anchor.TOP_CENTER,
                 GlobalAnchor = Anchor.TOP_CENTER
@@ -154,7 +154,6 @@ namespace GameDevelopmentProject.App.Levels.Easy {
                 });
             }
 
-
             collection3.Add(new TextDrawable(game) {
                 Position = new Vector2(0, 50),
                 Text = "The blue orbs move in a circular path! They may be tricker to dodge.",
@@ -172,10 +171,58 @@ namespace GameDevelopmentProject.App.Levels.Easy {
                 Behavior = InflictedBehavior.SCORE,
                 Value = 10
             });
+            for (int i = -630; i < 630; i += 35) {
+                collection4.Add(new Collectible(game) {
+                    Position = new Vector2(i, -60),
+                    Behavior = InflictedBehavior.DAMAGE,
+                    Source = new Rectangle(0, 0, 25, 25),
+                    Value = 100
+                });
+                collection4.Add(new Collectible(game) {
+                    Position = new Vector2(i, 60),
+                    Behavior = InflictedBehavior.DAMAGE,
+                    Source = new Rectangle(0, 0, 25, 25),
+                    Value = 100
+                });
+            }
+            for (int i = 100; i < 275; i += 35) {
+                collection4.Add(new CircularMovementCollectible(game) {
+                    Behavior = InflictedBehavior.DAMAGE,
+                    Source = new Rectangle(30, 30, 25, 25),
+                    Period = 2500,
+                    Radius = i,
+                    Value = 1
+                });
+                collection4.Add(new CircularMovementCollectible(game) {
+                    Behavior = InflictedBehavior.DAMAGE,
+                    Source = new Rectangle(30, 30, 25, 25),
+                    Period = 2500,
+                    Offset = 1250,
+                    Radius = i,
+                    Value = 1
+                });
+            }
+            for (int i = -75; i < 75; i += 35) {
+                collection4.Add(new LinearMovementCollectible(game) {
+                    BeginPosition = new Vector2(-300, i),
+                    EndPosition = new Vector2(300, i),
+                    Source = new Rectangle(0, 30, 25, 25),
+                    Period = 5000,
+                    Behavior = InflictedBehavior.DAMAGE,
+                    Value = 1
+                });
+            }
 
             collection4.Add(new TextDrawable(game) {
                 Position = new Vector2(0, 50),
-                Text = "Be careful, some red orbs slowly chase you!",
+                Text = "Still red orbs, linear green orbs and circular blue orbs may be combined.",
+                AssetReference = "Fonts/Default",
+                LocalAnchor = Anchor.TOP_CENTER,
+                GlobalAnchor = Anchor.TOP_CENTER
+            });
+            collection4.Add(new TextDrawable(game) {
+                Position = new Vector2(0, 75),
+                Text = "It's up to you to find your path to the yellow orbs.",
                 AssetReference = "Fonts/Default",
                 LocalAnchor = Anchor.TOP_CENTER,
                 GlobalAnchor = Anchor.TOP_CENTER
