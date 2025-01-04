@@ -12,7 +12,10 @@ using System.Threading.Tasks;
 namespace GameDevelopmentProject.Components.Gameplay {
     public class Player : SpriteSheetDrawable {
         public int Score = 0;
-        public int Health = 100;
+        public int Health = 3;
+        public int MaxScore = 50;
+        public int MaxHealth = 3;
+        public bool Invincible = false;
 
         private readonly float maxVelocity = 0.5f;
         private readonly float minVelocity = 0.02f;
@@ -20,6 +23,8 @@ namespace GameDevelopmentProject.Components.Gameplay {
         private readonly float acceleration = 0.05f;
         private float xTranslate = 0;
         private float yTranslate = 0;
+        private int previousHealth = 3;
+        private double hitTimestamp;
 
         public Player(Game game) : base(game) {
             AssetReference = "Images/basic-sheet";
@@ -34,6 +39,19 @@ namespace GameDevelopmentProject.Components.Gameplay {
             if (Health <= 0) {
                 SceneManager.GetInstance(game).SetActive("GameOver");
                 return;
+            }
+            
+            if (previousHealth != Health) {
+                Invincible = true;
+                hitTimestamp = gameTime.TotalGameTime.TotalMilliseconds;
+                previousHealth = Health;
+            }
+
+            if (Invincible && gameTime.TotalGameTime.TotalMilliseconds - hitTimestamp <= 3000) {
+                Visible = gameTime.TotalGameTime.Milliseconds % 200 <= 100;
+            } else {
+                Invincible = false;
+                Visible = true;
             }
 
             KeyboardState state = Keyboard.GetState();

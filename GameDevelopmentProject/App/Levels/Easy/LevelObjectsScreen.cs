@@ -23,7 +23,7 @@ namespace GameDevelopmentProject.App.Levels.Easy {
             player = new Player(game);
             healthDisplay = new TextDrawable(game) {
                 Position = new Vector2(5),
-                Text = "Health: 100/100",
+                Text = "Health: <3 <3 <3",
                 AssetReference = "Fonts/Default"
             };
             scoreDisplay = new TextDrawable(game) {
@@ -101,7 +101,7 @@ namespace GameDevelopmentProject.App.Levels.Easy {
                     Source = new Rectangle(0, 30, 25, 25),
                     Period = 2500,
                     Behavior = InflictedBehavior.DAMAGE,
-                    Value = 10
+                    Value = 1
                 });
             }
 
@@ -136,14 +136,24 @@ namespace GameDevelopmentProject.App.Levels.Easy {
                     Value = 100
                 });
             }
+            for (int i = 100; i < 275; i += 35) {
+                collection3.Add(new CircularMovementCollectible(game) {
+                    Behavior = InflictedBehavior.DAMAGE,
+                    Source = new Rectangle(30, 30, 25, 25),
+                    Period = 2500,
+                    Radius = i,
+                    Value = 1
+                });
+                collection3.Add(new CircularMovementCollectible(game) {
+                    Behavior = InflictedBehavior.DAMAGE,
+                    Source = new Rectangle(30, 30, 25, 25),
+                    Period = 2500,
+                    Offset = 1250,
+                    Radius = i,
+                    Value = 1
+                });
+            }
 
-            collection3.Add(new CircularMovementCollectible(game) {
-                Behavior = InflictedBehavior.DAMAGE,
-                Source = new Rectangle(30, 30, 25, 25),
-                Period = 2500,
-                Radius = 100,
-                Value = 10
-            });
 
             collection3.Add(new TextDrawable(game) {
                 Position = new Vector2(0, 50),
@@ -164,8 +174,11 @@ namespace GameDevelopmentProject.App.Levels.Easy {
         }
 
         public override void Update(GameTime gameTime) {
-            healthDisplay.Text = $"Health: {player.Health}/100";
-            scoreDisplay.Text = $"Score: {player.Score}/50";
+            healthDisplay.Text = "Lives: ";
+            for (int i = 1; i < player.Health + 1; i++) {
+                healthDisplay.Text += "<3 ";
+            }
+            scoreDisplay.Text = $"Score: {player.Score}/{player.MaxScore}";
 
             base.Update(gameTime);
         }

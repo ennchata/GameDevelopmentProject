@@ -24,15 +24,21 @@ namespace GameDevelopmentProject.Components.Gameplay {
         }
 
         public virtual void Invoke(Player player) {
-            Visible = false;
-            Active = false;
+            bool instaKill = Value >= player.MaxHealth;
 
             switch (Behavior) {
                 case InflictedBehavior.SCORE:
                     player.Score += Value;
+                    Visible = false;
+                    Active = false;
                     break;
                 case InflictedBehavior.DAMAGE:
-                    player.Health -= Value;
+                    if (instaKill) player.Health = 0;
+                    else if (!player.Invincible) { 
+                        player.Health -= Value;
+                        Visible = false;
+                        Active = false;
+                    }
                     break;
             }
         }
