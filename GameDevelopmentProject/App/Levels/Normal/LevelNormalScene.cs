@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameDevelopmentProject.App.Levels.Easy {
-    public class LevelEasyScene : BaseScene {
-        public LevelEasyScene(Game game) : base(game) {
+namespace GameDevelopmentProject.App.Levels.Normal {
+    public class LevelNormalScene : BaseScene {
+        public LevelNormalScene(Game game) : base(game) {
             Add("Objects", new ObjectsScreen(game));
         }
     }

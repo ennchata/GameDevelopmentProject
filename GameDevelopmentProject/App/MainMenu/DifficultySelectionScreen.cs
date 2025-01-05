@@ -30,12 +30,28 @@ namespace GameDevelopmentProject.App.MainMenu {
                 Position = new Vector2(0, 100),
                 Text = "Easy",
                 AssetReference = "Fonts/Default",
-                Color = Color.Black,
+                BackgroundColor = Color.Green,
+                HoverColor = Color.Lerp(Color.Green, Color.Black, 0.15f),
                 GlobalAnchor = Anchor.TOP_CENTER,
                 LocalAnchor = Anchor.TOP_CENTER,
                 Commands = new IButtonCommand[] {
                     new RegenerateSceneCommand(game, "LevelEasy", "MainMenu"),
                     new SceneTransitionCommand(game, "LevelEasy")
+                }
+            });
+
+            Add(new Button(game) {
+                ButtonSize = new Vector2(300, 60),
+                Position = new Vector2(0, 190),
+                Text = "Normal",
+                AssetReference = "Fonts/Default",
+                BackgroundColor = Color.Blue,
+                HoverColor = Color.Lerp(Color.Blue, Color.Black, 0.15f),
+                GlobalAnchor = Anchor.TOP_CENTER,
+                LocalAnchor = Anchor.TOP_CENTER,
+                Commands = new IButtonCommand[] {
+                    new RegenerateSceneCommand(game, "LevelNormal", "MainMenu"),
+                    new SceneTransitionCommand(game, "LevelNormal")
                 }
             });
         }

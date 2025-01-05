@@ -1,5 +1,6 @@
 ﻿using GameDevelopmentProject.App.GameOver;
 using GameDevelopmentProject.App.Levels.Easy;
+using GameDevelopmentProject.App.Levels.Normal;
 using GameDevelopmentProject.App.MainMenu;
 using GameDevelopmentProject.App.Pause;
 using Microsoft.Xna.Framework;
@@ -25,6 +26,8 @@ namespace GameDevelopmentProject.Components.Scenes {
             SetActive("MainMenu", new MainMenuScene(game));
             Add("LevelEasy", new LevelEasyScene(game));
             Add("PauseLevelEasy", new PauseScene(game, "LevelEasy"));
+            Add("LevelNormal", new LevelNormalScene(game));
+            Add("PauseLevelNormal", new PauseScene(game, "LevelNormal"));
 
             Add("GameOver", new GameOverScene(game));
             Add("GameWon", new GameOverScene(game, "You Won!"));

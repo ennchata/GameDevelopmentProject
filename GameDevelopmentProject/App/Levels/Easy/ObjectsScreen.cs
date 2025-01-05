@@ -11,14 +11,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GameDevelopmentProject.App.Levels.Easy {
-    public class LevelObjectsScreen : BaseScreen {
+    public class ObjectsScreen : BaseScreen {
         private TextDrawable healthDisplay;
         private TextDrawable scoreDisplay;
         private Player player;
 
-        public LevelObjectsScreen(Game game) : base(game) {
+        public ObjectsScreen(Game game) : base(game) {
             CreateObjects();
         }
+
         public override void CreateObjects() {
             player = new Player(game);
             healthDisplay = new TextDrawable(game) {

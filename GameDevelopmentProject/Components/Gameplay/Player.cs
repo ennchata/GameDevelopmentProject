@@ -74,7 +74,7 @@ namespace GameDevelopmentProject.Components.Gameplay {
                            yBound)
             );
 
-            List<ICollidable> collidables = SceneManager.GetInstance(game).activeScene.Get("LevelObjects").GetCollidables();
+            List<ICollidable> collidables = SceneManager.GetInstance(game).activeScene.Get("Objects").GetCollidables();
             foreach (ICollidable collidable in collidables) {
                 if (collidable.IsColliding(this)) collidable.Invoke(this);
             }
