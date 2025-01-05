@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GameDevelopmentProject.App.GameOver.ControlScreen" Collapsed="true">
+    <Position X="16" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>App\GameOver\ControlScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.App.GameOver.GameOverScene" Collapsed="true">
+    <Position X="4.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App\GameOver\GameOverScene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.App.Levels.Easy.LevelEasyScene" Collapsed="true">
+    <Position X="7" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App\Levels\Easy\LevelEasyScene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.App.Levels.Easy.ObjectsScreen" Collapsed="true">
+    <Position X="22.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAABAAAAAACAAAAAAAAAAAAAAEABAAAAAAAAAAA=</HashCode>
+      <FileName>App\Levels\Easy\ObjectsScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.App.Levels.Normal.LevelNormalScene" Collapsed="true">
+    <Position X="11.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App\Levels\Normal\LevelNormalScene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.App.Levels.Normal.ObjectsScreen" Collapsed="true">
+    <Position X="25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAABAAAAAACAAAAAAAAAAAAAAEABAAAAAAAAAAA=</HashCode>
+      <FileName>App\Levels\Normal\ObjectsScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.App.MainMenu.DifficultySelectionScreen" Collapsed="true">
+    <Position X="27.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App\MainMenu\DifficultySelectionScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.App.MainMenu.MainMenuScene" Collapsed="true">
+    <Position X="2.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>App\MainMenu\MainMenuScene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.App.MainMenu.SplashScreen" Collapsed="true">
+    <Position X="18.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App\MainMenu\SplashScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.App.Pause.ControlScreen" Collapsed="true">
+    <Position X="20.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App\Pause\ControlScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.App.Pause.PauseScene" Collapsed="true">
+    <Position X="9.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App\Pause\PauseScene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.Drawables.BaseDrawable&lt;T&gt;" Collapsed="true">
+    <Position X="37.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAABAAgAggAIYAIAAAAAAAACAAAAIAgQAAAAQ=</HashCode>
+      <FileName>Components\Drawables\BaseDrawable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.Drawables.BlankDrawable" Collapsed="true">
+    <Position X="43" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Components\Drawables\BlankDrawable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.Drawables.ImageDrawable" Collapsed="true">
+    <Position X="31.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Components\Drawables\ImageDrawable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.Drawables.SpriteSheetDrawable" Collapsed="true">
+    <Position X="36.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\Drawables\SpriteSheetDrawable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.Drawables.TextDrawable" Collapsed="true">
+    <Position X="40.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAACAAAAAQ=</HashCode>
+      <FileName>Components\Drawables\TextDrawable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.Gameplay.CircularMovementCollectible" Collapsed="true">
+    <Position X="38.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAgAgAI=</HashCode>
+      <FileName>Components\Gameplay\CircularMovementCollectible.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.Gameplay.Collectible" Collapsed="true">
+    <Position X="37.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAACAAAAAAAAAAAAAAAAAAgAAIAAAA=</HashCode>
+      <FileName>Components\Gameplay\Collectible.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.Gameplay.LinearMovementCollectible" Collapsed="true">
+    <Position X="36.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAgAI=</HashCode>
+      <FileName>Components\Gameplay\LinearMovementCollectible.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.Gameplay.Player" Collapsed="true">
+    <Position X="34" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQICAAAAAAACAgQAAAAEIAAEAAAAAYAABBAAAAAIAA=</HashCode>
+      <FileName>Components\Gameplay\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.Scenes.BaseScene" Collapsed="true">
+    <Position X="7" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\Scenes\BaseScene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.Scenes.SceneManager" Collapsed="true">
+    <Position X="47.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAEAAAAAAAAAAAIAABABEAAAIAAAAAIAAAAA=</HashCode>
+      <FileName>Components\Scenes\SceneManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.Screens.BaseScreen" Collapsed="true">
+    <Position X="21.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAA=</HashCode>
+      <FileName>Components\Screens\BaseScreen.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.UI.Commands.ActiveCommand" Collapsed="true">
+    <Position X="17" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAIAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\UI\Commands\ActiveCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.UI.Commands.BaseCommand" Collapsed="true">
+    <Position X="10.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Components\UI\Commands\BaseCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.UI.Commands.DebugCommand" Collapsed="true">
+    <Position X="3.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Components\UI\Commands\DebugCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.UI.Commands.GameExitCommand" Collapsed="true">
+    <Position X="8" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\UI\Commands\GameExitCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.UI.Commands.MainMenuCommand" Collapsed="true">
+    <Position X="12.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\UI\Commands\MainMenuCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.UI.Commands.RegenerateSceneCommand" Collapsed="true">
+    <Position X="14.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAIAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\UI\Commands\RegenerateSceneCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.UI.Commands.SceneTransitionCommand" Collapsed="true">
+    <Position X="19.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\UI\Commands\SceneTransitionCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.UI.Commands.ScreenActiveCommand" Collapsed="true">
+    <Position X="1.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\UI\Commands\ScreenActiveCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.UI.Commands.ScreenVisibleCommand" Collapsed="true">
+    <Position X="5.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\UI\Commands\ScreenVisibleCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.UI.Commands.VisibleCommand" Collapsed="true">
+    <Position X="10.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAIAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\UI\Commands\VisibleCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.UI.Button" Collapsed="true">
+    <Position X="40.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEgAAAIAAAgAgIAAAAAAACAAIAAAAACAAAQAAIAY=</HashCode>
+      <FileName>Components\UI\Button.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.UI.PauseHandler" Collapsed="true">
+    <Position X="29.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAYAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Components\UI\PauseHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.BaseObject" Collapsed="true">
+    <Position X="22.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAABAwAAAAAQAAAAAAAAAAAoAAAAAAAAAAQ=</HashCode>
+      <FileName>Components\BaseObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.NamedObjectCollection&lt;T&gt;" Collapsed="true">
+    <Position X="7" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAEAgAAAAABwBAAAAABAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Components\NamedObjectCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.ObjectCollection&lt;T&gt;" Collapsed="true">
+    <Position X="20.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAEAAAAAAABwAAAAAABAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Components\ObjectCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.Components.ScoreConditionalCollection&lt;T&gt;" Collapsed="true">
+    <Position X="13.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAApAAAAAAAAAAA=</HashCode>
+      <FileName>Components\ScoreConditionalCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDevelopmentProject.BaseGame" Collapsed="true">
+    <Position X="45.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAwAAAAAAAAAAAAAAAAgAAAAABAAAAAQ=</HashCode>
+      <FileName>BaseGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="GameDevelopmentProject.Components.Gameplay.ICollidable" Collapsed="true">
+    <Position X="47.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Components\Gameplay\ICollidable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameDevelopmentProject.Components.Screens.IBaseScreen" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAA=</HashCode>
+      <FileName>Components\Screens\IBaseScreen.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameDevelopmentProject.Components.UI.Commands.IButtonCommand" Collapsed="true">
+    <Position X="45.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\UI\Commands\IButtonCommand.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameDevelopmentProject.Components.IBaseObject" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAABAwAAAAAQAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Components\IBaseObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="GameDevelopmentProject.Components.Drawables.Anchor" Collapsed="true">
+    <Position X="45.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAIAAAAAGAAABAAAEBAgAAAAAAAIAA=</HashCode>
+      <FileName>Components\Drawables\Anchor.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameDevelopmentProject.Components.Gameplay.InflictedBehavior" Collapsed="true">
+    <Position X="47.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Components\Gameplay\InflictedBehavior.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
