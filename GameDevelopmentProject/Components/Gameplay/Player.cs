@@ -26,8 +26,19 @@ namespace GameDevelopmentProject.Components.Gameplay {
         private int previousHealth = 3;
         private double hitTimestamp;
 
+        private Rectangle[] sources = new Rectangle[6] {
+            new Rectangle(0, 0, 25, 25),
+            new Rectangle(25, 0, 25, 25),
+            new Rectangle(50, 0, 25, 25),
+            new Rectangle(75, 0, 25, 25),
+            new Rectangle(100, 0, 25, 25),
+            new Rectangle(125, 0, 25, 25)
+        };
+        private double lastSourceChange = 0;
+        private int currentSourceIndex = 0;
+
         public Player(Game game) : base(game) {
-            AssetReference = "Images/basic-sheet";
+            AssetReference = "Images/player-sheet";
             Source = new Rectangle(0, 0, 25, 25);
             GlobalAnchor = Anchor.CENTER;
             LocalAnchor = Anchor.CENTER;
@@ -57,6 +68,14 @@ namespace GameDevelopmentProject.Components.Gameplay {
             if (Score >= MaxScore) {
                 SceneManager.GetInstance(game).SetActive("GameWon");
                 return;
+            }
+
+            if (gameTime.TotalGameTime.TotalMilliseconds - lastSourceChange >= 1000) {
+                if (currentSourceIndex == sources.Count() - 1) currentSourceIndex = 0;
+                else currentSourceIndex++;
+
+                Source = sources[currentSourceIndex];
+                lastSourceChange = gameTime.TotalGameTime.TotalMilliseconds;
             }
 
             KeyboardState state = Keyboard.GetState();
