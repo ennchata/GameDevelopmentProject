@@ -77,7 +77,7 @@ namespace GameDevelopmentProject.App.Levels.Normal {
             #endregion
 
             #region TBD
-            ScoreConditionalCollection<BaseObject> collection2 = new ScoreConditionalCollection<BaseObject>(game, player, (_) => _.Score > 10);
+            ScoreConditionalCollection<BaseObject> collection2 = new ScoreConditionalCollection<BaseObject>(game, player, (_) => _.Score >= 10);
             collection2.Add(new TextDrawable(game) {
                 Position = new Vector2(0, 50),
                 Text = "More content to be added soon. Thanks for playing!",
@@ -87,7 +87,7 @@ namespace GameDevelopmentProject.App.Levels.Normal {
             });
 
             collection2.Add(new Collectible(game) {
-                Position = new Vector2(0, 0),
+                Position = new Vector2(0, 300),
                 Source = new Rectangle(30, 0, 25, 25),
                 Behavior = InflictedBehavior.SCORE,
                 Value = 50
